@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2024 a las 16:28:50
+-- Tiempo de generación: 16-09-2024 a las 22:49:49
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `labgestor`
+-- Base de datos: `test`
 --
 
 DELIMITER $$
@@ -941,85 +941,85 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `analisis`
 --
 ALTER TABLE `analisis`
-  MODIFY `id_analisis` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_analisis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `cajas_bioburden`
 --
 ALTER TABLE `cajas_bioburden`
-  MODIFY `id_caja_bioburden` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_caja_bioburden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `controles_negativos_medios`
 --
 ALTER TABLE `controles_negativos_medios`
-  MODIFY `id_control_negativo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_control_negativo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `deteccion_microorganismos`
 --
 ALTER TABLE `deteccion_microorganismos`
-  MODIFY `id_deteccion_microorganismo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_deteccion_microorganismo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `entradas_productos`
 --
 ALTER TABLE `entradas_productos`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
 --
 ALTER TABLE `estados`
-  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `etapas_deteccion`
 --
 ALTER TABLE `etapas_deteccion`
-  MODIFY `id_etapa_deteccion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_etapa_deteccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `fabricantes`
 --
 ALTER TABLE `fabricantes`
-  MODIFY `id_fabricante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_fabricante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `log_transaccional`
 --
 ALTER TABLE `log_transaccional`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `modulos`
 --
 ALTER TABLE `modulos`
-  MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `monitoreos_detecciones`
 --
 ALTER TABLE `monitoreos_detecciones`
-  MODIFY `id_monitoreo_deteccion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_monitoreo_deteccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `peticiones_cambio`
 --
 ALTER TABLE `peticiones_cambio`
-  MODIFY `id_peticion_cambio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peticion_cambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de la tabla `pruebas_recuento`
 --
 ALTER TABLE `pruebas_recuento`
-  MODIFY `id_prueba_recuento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_prueba_recuento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Restricciones para tablas volcadas
