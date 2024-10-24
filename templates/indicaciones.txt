@@ -1,0 +1,2 @@
+En este directorio se crean todas las vistas que reenderizan informacion con php o que son
+estaticas con html
