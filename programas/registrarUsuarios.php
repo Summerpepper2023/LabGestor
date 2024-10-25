@@ -51,5 +51,7 @@ mysqli_query($conexion, $query);
 
 echo "<script>
         alert('Usuario Registrado de Manera Exitosa');
-        location.href = '../index.html';
+        location.href = '../templates/loginUsuarios.html';
     </script>";
+
+mysqli_close($conexion);

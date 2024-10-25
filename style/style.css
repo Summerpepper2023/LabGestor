@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend+Deca:wght@100..900&display=swap');
 
+
+
+/* ------------------------------------------------------ */
+
+/* Declaracion de variables y configuracion del css */
+
+/* ------------------------------------------------------ */
 :root{
     --primary-color: #112b3c;
     --primary-light-color: #205375;
@@ -21,64 +28,83 @@ html{
 }
 
 
-/* ----------------------------------------------------------------------- */
-
-                /* ESTILOS DEL HOME DEL PROYECTO */
-
-/* ----------------------------------------------------------------------- */
-
 body{
     height: 100vh;
 }
 
-.container-home{
-    background-color: var(--third-color);
-    height: 500px;
-}
+/* ------------------------------------------------------- */
 
-.container-home h1{
-    color: white;
-    background-color: var(--secondary-color);
-    font-family: var(--heders-font);
-}
+/* SE CREAN LAS CLASES COMO COMPONENTES MAS USADOS */
 
-.container-home a{
-    font-size: 30px;
-}
+/* ------------------------------------------------------- */
 
-.container-home .row .secondary-card-color{
-    background: var(--primary-color);
-}
 
+
+/* BOTON PRIMARIO AZUL */
 .btn-primary-labgestor{
     background: var(--primary-light-color);
     color: white;
     padding: 10px 50px;
     border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .btn-primary-labgestor:hover{
     background: transparent;
-    color: var(--primary-color);
+    color: white;
     border:  2px solid var(--primary-color);
 }
 
+
+
+/* BOTON SECUNDARIO NARANJA */
 .btn-secondary-labgestor{
     background-color: var(--secondary-color);
     color: white;
     padding: 10px 50px;
     border: 2px solid transparent;
     font-weight: 500 !important;
+    text-decoration: none;
+    font-weight: 500;
 
 }
 
+/* BOTON BLANCO SIN FONDO */
+.btn-light-labgestor-light{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: ease-out .25s;
+}
 
 .btn-secondary-labgestor:hover{
     background: transparent;
-    color: var(--secondary-color);
+    color: white;
     border:  2px solid var(--secondary-color);
-    font-weight: 500 !important;
 }
+/* ----------------------------------------------------------------------- */
+
+                /* ESTILOS DEL HOME DEL PROYECTO */
+
+/* ----------------------------------------------------------------------- */
+
+
+#hero .home-h1{
+    background: var(--primary-color);
+    color: white;
+    font-family: var(--heders-font);
+}
+
+#hero .container-home{
+    background-color: var(--primary-light-color);
+}
+
+#hero .container-home .col-lg-6:last-child{
+    background-color: var(--secondary-color);
+}
+
+
 /* ----------------------------------------------------------------------- */
 
         /* ESTILOS DE LA VISTA DE REGISTRO DE USUARIOS */
@@ -86,28 +112,44 @@ body{
 /* ----------------------------------------------------------------------- */
 
 
-.btn-light-labgestor-light{
-    color: white;
-    font-size: 30px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: ease-out .25s;
-}
-
-.btn-light-labgestor-light:hover{
-    transform: scale(1.2);
-}
-
-form{
+#formulario-registro form{
     background: var(--primary-color);
 }
 
-form label{
+#formulario-registro form label{
     color: white;
 }
 
-.register-art{
+#formulario-registro .register-art{
     background-color: var(--primary-color);
+}
+
+
+/* -------------------------------------------------------------- */
+
+/* ESTILOS DE LA VISTA DE LOGIN DE USUARIOS */
+
+/* -------------------------------------------------------------- */
+#login #login-illustration{
+    background: var(--primary-color) !important;
+}
+
+#login h1{
+    color: var(--secondary-color);
+    font-size: 60px;
+    font-weight: 700;
+}
+
+#login .login-form{
+    background: var(--primary-color);
+}
+
+#login .login-form label{
+    color: white !important;
+    font-size: 20px;
+}
+
+#login .login-form #link-recuperar-password{
+    color: white;
+    font-weight: 100;
 }
