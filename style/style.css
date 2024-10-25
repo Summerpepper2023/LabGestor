@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend+Deca:wght@100..900&display=swap');
+
+
+
+/* ------------------------------------------------------ */
+
+/* Declaracion de variables y configuracion del css */
+
+/* ------------------------------------------------------ */
+:root{
+    --primary-color: #112b3c;
+    --primary-light-color: #205375;
+    --secondary-color: #f66b0e;
+    --third-color: #efefef;
+    --primary-text-color: #000000;
+    --heders-font: font-family: "Comfortaa", sans-serif;
+    --text-font: font-family: "Lexend Deca", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--text-font);
+}
+
+html{
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+}
+
+/* ------------------------------------------------------- */
+
+/* SE CREAN LAS CLASES COMO COMPONENTES MAS USADOS */
+
+/* ------------------------------------------------------- */
+
+
+
+/* BOTON PRIMARIO AZUL */
+.btn-primary-labgestor{
+    background: var(--primary-light-color);
+    color: white;
+    padding: 10px 50px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-primary-labgestor:hover{
+    background: transparent;
+    color: white;
+    border:  2px solid var(--primary-color);
+}
+
+
+
+/* BOTON SECUNDARIO NARANJA */
+.btn-secondary-labgestor{
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 50px;
+    border: 2px solid transparent;
+    font-weight: 500 !important;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+
+/* BOTON BLANCO SIN FONDO */
+.btn-light-labgestor-light{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: ease-out .25s;
+}
+
+.btn-secondary-labgestor:hover{
+    background: transparent;
+    color: white;
+    border:  2px solid var(--secondary-color);
+}
+/* ----------------------------------------------------------------------- */
+
+                /* ESTILOS DEL HOME DEL PROYECTO */
+
+/* ----------------------------------------------------------------------- */
+
+
+#hero .home-h1{
+    background: var(--primary-color);
+    color: white;
+    font-family: var(--heders-font);
+}
+
+#hero .container-home{
+    background-color: var(--primary-light-color);
+}
+
+#hero .container-home .col-lg-6:last-child{
+    background-color: var(--secondary-color);
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+        /* ESTILOS DE LA VISTA DE REGISTRO DE USUARIOS */
+
+/* ----------------------------------------------------------------------- */
+
+
+#formulario-registro form{
+    background: var(--primary-color);
+}
+
+#formulario-registro form label{
+    color: white;
+}
+
+#formulario-registro .register-art{
+    background-color: var(--primary-color);
+}
+
+
+/* -------------------------------------------------------------- */
+
+/* ESTILOS DE LA VISTA DE LOGIN DE USUARIOS */
+
+/* -------------------------------------------------------------- */
+#login #login-illustration{
+    background: var(--primary-color) !important;
+}
+
+#login h1{
+    color: var(--secondary-color);
+    font-size: 60px;
+    font-weight: 700;
+}
+
+#login .login-form{
+    background: var(--primary-color);
+}
+
+#login .login-form label{
+    color: white !important;
+    font-size: 20px;
+}
+
+#login .login-form #link-recuperar-password{
+    color: white;
+    font-weight: 100;
+}
