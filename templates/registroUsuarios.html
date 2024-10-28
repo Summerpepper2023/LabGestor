@@ -6,22 +6,22 @@
     <title>Labgestor|Regiostro - Usuarios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     
 
-    <section class="row h-100">
+    <section class="row h-100" id="formulario-registro">
         <!-- Ilustracion del Registro -->
-        <div class="col-lg-7 rounded-end-5 register-art">
-            <a class="btn-light-labgestor-light pt-3 ps-3" href="index.html"><i class="fa-solid fa-chevron-left"></i>Atras</a>
+        <div class="col-lg-7 rounded-end-5 register-art pt-4">
+            <a class="btn-light-labgestor-light ps-5" href="../index.html"><i class="fa-solid fa-chevron-left"></i>Atras</a>
         </div>
 
         <!-- Formulario de Registro de Usuarios -->
         <div class="col-lg-5 d-flex justify-content-center align-items-center p-0">
             <article class="container p-5 ">
                 <h1 class="text-center">Registrar Usuarios</h1>
-                <form action="../Programas/registrarUsuarios.php"  method="post" class="rounded-5 p-4">
+                <form action="../Programas/registrarUsuarios.php"  method="post" class="rounded-5 p-4 needs-feedback" novalidate>
 
 
                     <!-- Se le piden los nombres al usuario que se quiere registrar -->
