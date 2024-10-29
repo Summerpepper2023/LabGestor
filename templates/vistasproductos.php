@@ -102,9 +102,57 @@ $resultado_p = mysqli_query($conexion, $query)
 
 
                         </tbody>
-                </article>
+                </article id ="targetas" >
+                    <div class="row "> 
+                        <div class=" col-lg-4 card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="t_targeta">Registo Pruebas de Recuento</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                            </div>
+
+                            <div class="card col-lg-4" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="t_targeta">Controles Negativos de Medios</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                                </div>
 
 
+                                <div class="card col-lg-4" style="width: 18rem;">
+                                <div class="card-body ">
+                                    <h5 class="t_targeta">Deteccion de Microorganismos Especificos</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">An item</li>
+                                    <li class="list-group-item">A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                                </div>
+                    </div>
                 </article>
             </div>
         </div>
