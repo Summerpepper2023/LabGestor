@@ -7,7 +7,7 @@
      $password = $_POST["password"];
 
     //  Se define una consulta a la base de datos que nos traiga la password del usuario
-     $query = "select nombre_usuario, contraseña_usuario, estado, solicitud_registro from usuarios where nombre_usuario = '$email'";
+     $query = "select nombre_usuario, contraseña_usuario, estado, solicitud_registro, rol_usuario from usuarios where nombre_usuario = '$email'";
      $result = mysqli_query($conexion, $query);
      
      //  Se abstrae el usuario en un array asociativo
@@ -31,9 +31,18 @@
             </script>";
     }
 
-    echo "<script>
-            location.href = '../templates/dashboard.php';
+    // Se verifica el rol del usuario y se le redirige al dashboard correspondiente
+    if ($usuario['rol_usuario'] === "coordinador"){
+        echo "<script>
+            location.href = '../templates/dashboardCoordinador.php';
         </script>";
+    }
+    else{
+        echo "<script>
+            location.href = '../templates/dashboardAnalista.php';
+        </script>";
+    }
+    
 
     mysqli_close($conexion);
     
