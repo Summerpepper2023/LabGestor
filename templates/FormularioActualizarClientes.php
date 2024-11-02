@@ -28,12 +28,12 @@ include '../conexionDB.php';
                 <!-- Se hace un input que tenga como valor predeterminado la informacion del cliente -->
                 <div class="mb-3">
                     <label for="nombre_cliente" class="form-label">Nombre del Cliente</label>
-                    <input type="text" name="nombre_cliente" class="form-control"  value=<?php echo $cliente['nombre_cliente']?> required>
+                    <input type="text" name="nombre_cliente" class="form-control" value="<?php echo htmlspecialchars($cliente['nombre_cliente']); ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="nombre_cliente" class="form-label">Direccion del Cliente</label>
-                    <input type="text" name="direccion_cliente" class="form-control"  value=<?php echo $cliente['direccion_cliente']?> required>
+                    <input type="text" name="direccion_cliente" class="form-control" value="<?php echo htmlspecialchars($cliente['direccion_cliente']); ?>" required>
                 </div>
                 <div class="mb-3 text-center">
                     <button type="submit" class="btn btn-success">Actualizar</button>
