@@ -1,5 +1,5 @@
 <?php 
-require_once("../conexionDB.php");
+include("../conexionDB.php");
 
 // Se abstraen los datos actualizados del cliente
 $idCliente = $_POST['id_cliente'];
@@ -8,13 +8,20 @@ $direccionCliente = $_POST['direccion_cliente'];
 
 
 // Se ejecuta la sentencia de actualizardo de cliente
-$sql = "UPDATE clientes SET nombre_cliente= '$nombreCliente', direccion_cliente= '$direccionCliente' WHERE id_cliente= '$idCliente'";
-$result = mysqli_query($conexion, $sql);
+$actualizacion = $conexion->prepare("UPDATE clientes SET nombre_cliente = ?, direccion_cliente = ? WHERE id_cliente = ?");
+$actualizacion->bind_param("ssi", $nombreCliente, $direccionCliente, $idCliente);
 
 // Se redirige a la pagina de consulta d clientes
-echo "<script>
-alert('Se actualizo correctamente la informacion del cliente');
-location.href = '../templates/ConsultarClientes.php';
-</script>";
-
-mysqli_close($conexion);
+if ($actualizacion->execute()) {
+    echo "<script>
+        alert('Se actualizó correctamente la información del cliente');
+        location.href = '../templates/ConsultarClientes.php';
+        </script>";
+} else {
+    echo "<script>
+        alert('Error al actualizar la información del cliente');
+        location.href = '../templates/ConsultarClientes.php';
+        </script>";
+}
+// Cierra la declaración
+$actualizacion->close();
