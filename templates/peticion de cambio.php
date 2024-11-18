@@ -1,13 +1,6 @@
 <?php
 require_once ("../conexionDB.php");
 
-    foreach ($productos)
-
-
-
-
-
-
 ?>
 <html lang="en">
 <head>
