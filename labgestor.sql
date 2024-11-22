@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2024 a las 22:49:49
+-- Tiempo de generación: 22-11-2024 a las 04:45:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `test`
+-- Base de datos: `labgestor`
 --
 
 DELIMITER $$
@@ -207,6 +207,15 @@ CREATE TABLE `clientes` (
   `direccion_cliente` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `direccion_cliente`) VALUES
+(4, 'David Gonzalez', 'cll28 #88D -54'),
+(5, 'Andrea Niño Bedoya', 'cll24 67-3'),
+(6, 'Jaider Andres Ovalle', 'av 6 ejjddjdj');
+
 -- --------------------------------------------------------
 
 --
@@ -393,6 +402,16 @@ CREATE TABLE `entradas_productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `entradas_productos`
+--
+
+INSERT INTO `entradas_productos` (`id_entrada`, `codigo_entrada`, `proposito_analisis`, `condiciones_ambientales`, `fecha_recepcion`, `fecha_inicio_analisis`, `fecha_final_analisis`, `numero_registro_producto`, `id_usuario`) VALUES
+(1, 'ENT-', 'revision', 'de buena calidad', '2017-03-04', '2020-05-06', NULL, '399999', '466'),
+(2, 'ENT-', 'revision', 'de buena calidad', '2024-11-21', '2024-11-21', NULL, '383300', '466'),
+(3, 'ENT-', 'revision', 'de buena calidad', '2024-11-21', '2024-11-21', NULL, '2005', '499'),
+(4, 'ENT-', 'revision', 'de buena calidad', '2024-11-21', '2024-11-21', NULL, '2004', '4');
+
+--
 -- Disparadores `entradas_productos`
 --
 DELIMITER $$
@@ -481,6 +500,13 @@ CREATE TABLE `fabricantes` (
   `direccion_fabricante` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `fabricantes`
+--
+
+INSERT INTO `fabricantes` (`id_fabricante`, `nombre_fabricante`, `direccion_fabricante`) VALUES
+(3, 'Andrea Niño Bedoya', 'cll26 sur ');
+
 -- --------------------------------------------------------
 
 --
@@ -497,6 +523,16 @@ CREATE TABLE `log_transaccional` (
   `codigo_registro` varchar(30) NOT NULL,
   `numero_registro_producto` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `log_transaccional`
+--
+
+INSERT INTO `log_transaccional` (`id_log`, `descripcion`, `detalles_registro`, `accion`, `fechayhora_log`, `id_modulo`, `codigo_registro`, `numero_registro_producto`) VALUES
+(1, NULL, '{\"id_entrada\": 1, \"proposito_analisis\": \"revision\", \"condiciones_ambientales\": \"de buena calidad\", \"fecha_recepcion\": \"2017-03-04\", \"fecha_inicio_analisis\": \"2020-05-06\", \"fecha_final_analisis\": null, \"numero_registro_producto\": \"399999\", \"id_usuario\": \"466\"}', 'registrar', '2024-11-21 20:36:45', 1, 'ENT-1', '399999'),
+(2, NULL, '{\"id_entrada\": 2, \"proposito_analisis\": \"revision\", \"condiciones_ambientales\": \"de buena calidad\", \"fecha_recepcion\": \"2024-11-21\", \"fecha_inicio_analisis\": \"2024-11-21\", \"fecha_final_analisis\": null, \"numero_registro_producto\": \"383300\", \"id_usuario\": \"466\"}', 'registrar', '2024-11-21 22:10:17', 1, 'ENT-2', '383300'),
+(3, NULL, '{\"id_entrada\": 3, \"proposito_analisis\": \"revision\", \"condiciones_ambientales\": \"de buena calidad\", \"fecha_recepcion\": \"2024-11-21\", \"fecha_inicio_analisis\": \"2024-11-21\", \"fecha_final_analisis\": null, \"numero_registro_producto\": \"2005\", \"id_usuario\": \"499\"}', 'registrar', '2024-11-21 22:16:40', 1, 'ENT-3', '2005'),
+(4, NULL, '{\"id_entrada\": 4, \"proposito_analisis\": \"revision\", \"condiciones_ambientales\": \"de buena calidad\", \"fecha_recepcion\": \"2024-11-21\", \"fecha_inicio_analisis\": \"2024-11-21\", \"fecha_final_analisis\": null, \"numero_registro_producto\": \"2004\", \"id_usuario\": \"4\"}', 'registrar', '2024-11-21 22:19:24', 1, 'ENT-4', '2004');
 
 -- --------------------------------------------------------
 
@@ -619,6 +655,17 @@ CREATE TABLE `productos` (
   `id_modulo` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`numero_registro_producto`, `nombre_producto`, `fecha_fabricacion`, `fecha_vencimiento`, `descripcion_producto`, `activo_producto`, `presentacion_producto`, `cantidad_producto`, `numero_lote_producto`, `tamano_lote_producto`, `id_cliente`, `id_fabricante`, `id_modulo`) VALUES
+('2004', 'metacarbamol', '2024-11-21', '2024-11-21', 'en buen estado', 'activo', 'capsulas', '20 unidades', '646237', '4748489', 4, 3, 1),
+('2005', 'acetaminofen', '2024-11-21', '2024-11-21', 'en buen estado', 'si', 'capsulas', '20 unidades', '77777', '7777', 4, 3, 1),
+('35353', 'acetaminofen', '2023-02-26', '2024-04-26', 'en buen estado', 'activo', 'capsulas', '20 unidades', '73737', '373788328', 5, 9, 3),
+('383300', 'acetaminofen', '2024-11-21', '2024-11-21', 'en buen estado', 'activo', 'capsulas', '20 unidades', '646237', '463828', 4, 3, 1),
+('399999', 'metacarbamol', '2022-02-20', '2024-02-20', 'en buen estado', 'si', 'capsulas', '20 unidade', '3737', '4748489', 6, 3, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -710,8 +757,7 @@ CREATE TABLE `registro_entrada_productos` (
 ,`fecha_recepcion` date
 ,`fecha_inicio_analisis` date
 ,`fecha_final_analisis` date
-,`id_usuario` varchar(15)
-,`nombre_usuario` varchar(83)
+,`firma_usuario` varchar(20)
 );
 
 -- --------------------------------------------------------
@@ -754,6 +800,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `foto_usuario`, `nombre_usuario`, `contraseña_usuario`, `rol_usuario`, `firma_usuario`, `fecha_inscripcion`, `estado`, `solicitud_registro`) VALUES
+('', '', '', '', '', NULL, '', '$2y$10$9k3xx4pNvv/Rvp9AgW6PheqHdq25XVLbkirRq7QqDNWk1DvGhXQj2', 'analista', '. ', '2024-10-24', 'inactivo', 'en revision'),
 ('0872783316', '', '', '', '', NULL, 'ginchbald7@lycos.com', '$2a$04$AXy4LOpB4jsqhO6dzsv/c.qQ0Jgx.mN4boL6I2KIZAWoryr2KAmFa', 'analista', 'Georgeta', '2024-07-30', 'activo', 'en revision'),
 ('2595285254', '', '', '', '', NULL, 'kdmitrovic3@engadget.com', '$2a$04$fijrResNeypnBePp79CxJutWkmfamPogm6l264CSVLBX6/VU0Of0y', 'analista', 'Kelly', '2024-07-23', 'inactivo', 'en revision'),
 ('321', 'David', '', 'Gonzalez', '', NULL, 'David123', '', 'analista', 'D. Gonzalez', '2024-09-11', 'inactivo', 'en revision'),
@@ -799,7 +846,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `registro_entrada_productos`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `registro_entrada_productos`  AS SELECT `p`.`numero_registro_producto` AS `numero_registro_producto`, `p`.`nombre_producto` AS `nombre_producto`, `e`.`proposito_analisis` AS `proposito_analisis`, `e`.`condiciones_ambientales` AS `condiciones_ambientales`, `e`.`fecha_recepcion` AS `fecha_recepcion`, `e`.`fecha_inicio_analisis` AS `fecha_inicio_analisis`, `e`.`fecha_final_analisis` AS `fecha_final_analisis`, `u`.`id_usuario` AS `id_usuario`, concat(`u`.`primer_nombre`,' ',`u`.`segundo_nombre`,' ',`u`.`primer_apellido`,' ',`u`.`segundo_apellido`) AS `nombre_usuario` FROM ((`entradas_productos` `e` join `productos` `p` on(`e`.`numero_registro_producto` = `p`.`numero_registro_producto`)) join `usuarios` `u` on(`e`.`id_usuario` = `u`.`id_usuario`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `registro_entrada_productos`  AS SELECT `p`.`numero_registro_producto` AS `numero_registro_producto`, `p`.`nombre_producto` AS `nombre_producto`, `e`.`proposito_analisis` AS `proposito_analisis`, `e`.`condiciones_ambientales` AS `condiciones_ambientales`, `e`.`fecha_recepcion` AS `fecha_recepcion`, `e`.`fecha_inicio_analisis` AS `fecha_inicio_analisis`, `e`.`fecha_final_analisis` AS `fecha_final_analisis`, `u`.`firma_usuario` AS `firma_usuario` FROM ((`productos` `p` left join `entradas_productos` `e` on(`p`.`numero_registro_producto` = `e`.`numero_registro_producto`)) left join `usuarios` `u` on(`e`.`id_usuario` = `u`.`id_usuario`)) ;
 
 -- --------------------------------------------------------
 
@@ -941,85 +988,85 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `analisis`
 --
 ALTER TABLE `analisis`
-  MODIFY `id_analisis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_analisis` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cajas_bioburden`
 --
 ALTER TABLE `cajas_bioburden`
-  MODIFY `id_caja_bioburden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_caja_bioburden` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `controles_negativos_medios`
 --
 ALTER TABLE `controles_negativos_medios`
-  MODIFY `id_control_negativo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_control_negativo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `deteccion_microorganismos`
 --
 ALTER TABLE `deteccion_microorganismos`
-  MODIFY `id_deteccion_microorganismo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_deteccion_microorganismo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `entradas_productos`
 --
 ALTER TABLE `entradas_productos`
-  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
 --
 ALTER TABLE `estados`
-  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `etapas_deteccion`
 --
 ALTER TABLE `etapas_deteccion`
-  MODIFY `id_etapa_deteccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_etapa_deteccion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `fabricantes`
 --
 ALTER TABLE `fabricantes`
-  MODIFY `id_fabricante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_fabricante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `log_transaccional`
 --
 ALTER TABLE `log_transaccional`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `modulos`
 --
 ALTER TABLE `modulos`
-  MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_modulo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `monitoreos_detecciones`
 --
 ALTER TABLE `monitoreos_detecciones`
-  MODIFY `id_monitoreo_deteccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_monitoreo_deteccion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `peticiones_cambio`
 --
 ALTER TABLE `peticiones_cambio`
-  MODIFY `id_peticion_cambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_peticion_cambio` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pruebas_recuento`
 --
 ALTER TABLE `pruebas_recuento`
-  MODIFY `id_prueba_recuento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_prueba_recuento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
